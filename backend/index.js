@@ -10,4 +10,7 @@ app.use(cors());
 app.use('/admin',route)
 mongoose.connect("mongodb+srv://admin:FV7KSpLEENd2C6Il@cluster0.jtwcc.mongodb.net/?retryWrites=true&w=majority").then(res=>console.log("conneceted to DB")).then(()=>{
     app.listen(5000)
-}).catch((err)=>console.log(err))
+}).catch((err)=>console.log(err));
+
+
+
