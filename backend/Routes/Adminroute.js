@@ -1,8 +1,9 @@
 const express=require('express');
 const router=express.Router();
 const schema=require('../models/admin');
-const Controllers=require('../Controllers/control');
+const Controllers=require('../Controllers/Admincontrol');
 const AdminForm = require('../models/AdminForm');
+
 
 router.post('/',Controllers.postData);
 router.post('/login',Controllers.logData);
@@ -15,4 +16,8 @@ router.get('/data',async(req,res)=>{
         })
     }return res.json(data)
 })
+
+
+
+
 module.exports=router
