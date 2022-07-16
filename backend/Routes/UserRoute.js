@@ -18,7 +18,11 @@ const upload=multer({storage:storage})
 userRoute.post('/signup',upload.single("resume"),Controllers.Personaldata)
 userRoute.put('/signup/employe/:id',Controllers.employData)
 userRoute.get('/',Controllers.getAllUser)
+userRoute.get('/:id',Controllers.getSpecificUser)
+userRoute.put('/:id',Controllers.putSpecificUser)
 userRoute.put('/signup/education/:id',Controllers.Educationdata)
+userRoute.post('/signin',Controllers.signIn)
+
 
 
 module.exports=userRoute

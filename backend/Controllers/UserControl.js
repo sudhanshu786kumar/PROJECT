@@ -1,97 +1,154 @@
 
-const personalSchema=require('../models/UserPersonal');
+const personalSchema = require('../models/UserPersonal');
+const login=require('../models/userLogin')
 
+const getAllUser = async (req, res) => {
 
-const getAllUser=async(req,res)=>{
-
-    let data=await personalSchema.find()
-    if(!data){
+    let data = await personalSchema.find()
+    if (!data) {
         res.status(401).json({
-            msg:"no data available"
+            msg: "no data available"
         })
-    }return res.status(200).json(
+    } return res.status(200).json(
         data)
 }
 
 
-
-
-
-
-
-
-const PersonalData=async (req,res)=>{
-const{name,email,mobile,address,workexp,skills}=req.body;
-console.log(req.file.originalname)
-let data;
-try{
-data = new personalSchema({
-    name,
-    email,
-    mobile,
-    address,
-    workexp,
-    skills,
-    resume:req.file.originalname
-})
-await data.save()
-}catch(err){
-    console.log(err)
-}
-if(!data){
-    res.status(500).json({
-        msg:"data not uploaded"
-    })
-}return res.status(201).json(data)
-
-}
-
-const employData=async(req,res)=>{
-    const{cemp,dest,jobdesc,expm,prevemp,pjobdesc,pexpm}=req.body
-    let id=req.params.id;
-    let data;
-    try{data=await personalSchema.findByIdAndUpdate(id,{
-        
-        
-                cemp,dest,jobdesc,expm,prevemp,pjobdesc,pexpm
-            
-            
-        }  )  
-        await data.save()
-    }catch(err){
-        console.log(err)
-    }
-    
-    if(!data){
-        res.status(500).json({
-            msg:"data not uploaded"
+const getSpecificUser = async (req, res) => {
+    let id = req.params.id;
+    let data = await personalSchema.findById(id)
+    if (!data) {
+        res.status(404).json({
+            msg: "not found"
         })
-    }return res.status(201).json(data)
+    } return res.status(201).json(data)
 }
 
 
-const Educationdata=async(req,res)=>{
-const{clg,YOP,isgraduated,graduateSchool,NOY,skills,certf}=req.body
-let id=req.params.id;
-let data;
+const signIn = async (req, res) => {
+const{email,password}=req.body
+ let data
 try{
-    data=await personalSchema.findByIdAndUpdate(id,{
-        clg,YOP,isgraduated,graduateSchool,NOY,skills,certf
-    })
+    data=await signIn.find({email:email})
+    
+
 }
 catch(err){
     console.log(err)
 }
-
-
-if(!data){
-    res.status(500).json({
-        msg:"data not uploaded"
-    })
-}return res.status(201).json(data)
 }
 
-exports.Personaldata=PersonalData;
-exports.employData=employData;
-exports.getAllUser=getAllUser;
-exports.Educationdata=Educationdata;
+
+
+
+
+
+const PersonalData = async (req, res) => {
+    const { name, email, mobile, address, workexp, Pskills, pwd } = req.body;
+
+    let data;
+    try {
+        data = new personalSchema({
+            name,
+            email,
+            pwd,
+            mobile,
+            address,
+            workexp,
+            Pskills,
+            resume: req.file.originalname
+        })
+        await data.save()
+    } catch (err) {
+        console.log(err)
+    }
+    if (!data) {
+        res.status(500).json({
+            msg: "data not uploaded"
+        })
+    } return res.status(201).json(data)
+
+}
+
+const employData = async (req, res) => {
+    const { cemp, dest, jobdesc, expm, prevemp, pjobdesc, pexpm } = req.body
+    let id = req.params.id;
+    let data;
+    try {
+        data = await personalSchema.findByIdAndUpdate(id, {
+
+
+            cemp, dest, jobdesc, expm, prevemp, pjobdesc, pexpm
+
+
+        })
+        await data.save()
+    } catch (err) {
+        console.log(err)
+    }
+
+    if (!data) {
+        res.status(500).json({
+            msg: "data not uploaded"
+        })
+    } return res.status(201).json(data)
+}
+
+
+const Educationdata = async (req, res) => {
+    const { clg, YOP, isgraduated, graduateSchool, NOY, Eskills, certf } = req.body
+    let id = req.params.id;
+    let data;
+    try {
+        data = await personalSchema.findByIdAndUpdate(id, {
+            clg, YOP, isgraduated, graduateSchool, NOY, Eskills, certf
+        })
+    }
+    catch (err) {
+        console.log(err)
+    }
+
+
+    if (!data) {
+        res.status(500).json({
+            msg: "data not uploaded"
+        })
+    } return res.status(201).json(data)
+}
+
+const putSpecificUser = async (req, res) => {          //specific user put
+    const { name,email,pwd,
+        mobile,
+        address,
+        workexp,
+        Pskills,} = req.body
+    let id = req.params.id;
+let data
+    try{ 
+        data = await personalSchema.findByIdAndUpdate(id, {
+            name,
+            email,
+            pwd,
+            mobile,
+            address,
+            workexp,
+            Pskills,
+            resume: req.file.originalname
+    })}
+    catch(err){
+        console.log(err)
+    }
+    if(!data){
+        res.status(404).json({
+            msg:"no data"
+        })
+    }return res.status(201).json(data)
+}
+
+exports.Personaldata = PersonalData;
+exports.employData = employData;
+exports.getAllUser = getAllUser;
+exports.Educationdata = Educationdata;
+exports.signIn = signIn;
+exports.getSpecificUser = getSpecificUser;
+exports.putSpecificUser=putSpecificUser;

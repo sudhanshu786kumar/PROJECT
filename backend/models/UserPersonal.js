@@ -12,6 +12,10 @@ const userSchema = new schema({
         type:String,
       
     },
+    pwd:{
+        type:String,
+    },
+
     mobile:{
         type:Number,
        
@@ -29,12 +33,14 @@ const userSchema = new schema({
 year:Number,
 month:String
     },
-    skills:{
+    Pskills:{
         type:String,
        
     },
     resume:{
         type:String,
+        required:false,
+        default:"null"
       
     },                                    //education details
     clg:{
@@ -53,7 +59,7 @@ month:String
     NOY:{
     type:Number
     },
-    skills:{
+    Eskills:{
         type:String
     },
     certf:{
