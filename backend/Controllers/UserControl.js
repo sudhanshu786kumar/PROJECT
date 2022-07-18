@@ -26,16 +26,26 @@ const getSpecificUser = async (req, res) => {
 
 
 const signIn = async (req, res) => {
-const{email,password}=req.body
- let data
-try{
-    data=await signIn.find({email:email})
-    
+const{email,password}=req.body;
+ 
+let pwds=await personalSchema.findOne({email:email})
 
+if(pwds){
+    let rpwd=await personalSchema.findOne({pwd:password})
+    if(rpwd){ res.status(200).json({
+        msg:"logined !!"
+    })}
+    else{
+        res.status(400).json({
+            msg:"logined failed!!"
+        })
+    }
+   
 }
-catch(err){
-    console.log(err)
-}
+else{ res.status(401).json({
+    msg:"no such user  !!"
+})}
+
 }
 
 
