@@ -1,8 +1,18 @@
 import React from 'react'
 
 const Footer = () => {
+  let footerstyle = {
+    backgroundcolor:"dark",
+    position: "sticky",
+    top:"70vh",
+    width:"100%",
+  }
   return (
-    <div>Copyright &copy; bruteforce.com</div>
+    <footer style={footerstyle}>
+      <p>
+       Copyright &copy; bruteforce.com
+      </p>
+    </footer>
   )
 }
 
