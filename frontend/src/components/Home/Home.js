@@ -5,7 +5,7 @@ import Login from './Login';
 const Home = () => {
   return (
     <>
-    <div>HOme</div>
+    <div>Home</div>
    
     
     <div style={{display:"flex",margin:0}}>
