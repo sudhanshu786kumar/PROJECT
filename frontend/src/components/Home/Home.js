@@ -7,6 +7,26 @@ import './home.css';
 const Home = () => {
   return (
     <>
+<<<<<<< HEAD
+=======
+    <div>Home</div>
+   
+    
+    <div style={{display:"flex",margin:0}}>
+  <div>
+      <div>
+        <img src="logo.png" width="100%" padding="10px"/></div>
+      <div>
+        <input placeholder="skills"/><input placeholder="location"/><button>Find Jobs</button>
+      </div>
+  </div>
+      <div style={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",alignContent:"center"}}>
+<Login/>
+      </div>
+      
+    </div>
+    <section>
+>>>>>>> 66df3b4124177cebe470f4ddb9f98e1ae834cf17
 
     {/* home body */}
     <div classNameName='homeBody'>
