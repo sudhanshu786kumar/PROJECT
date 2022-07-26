@@ -1,8 +1,10 @@
 import React from 'react'
-
+import './home.css'
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <p className="copyright">
+      Copyright &copy;2022 BruteForce
+    </p>
   )
 }
 

@@ -1,6 +1,6 @@
 
 const personalSchema = require('../models/UserPersonal');
-const login=require('../models/userLogin')
+
 
 const getAllUser = async (req, res) => {
 

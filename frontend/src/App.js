@@ -14,9 +14,10 @@ const App = () => {
         <Routes>
             <Route path='/' element={<Home/>} exact/>
             <Route path='/register' element={<Register/>} exact/>
+            {/* 
             <Route path='/' element={<Home/>} exact/>
             <Route path='/' element={<Home/>} exact/>
-            <Route path='/' element={<Home/>} exact/>
+            <Route path='/' element={<Home/>} exact/> */}
         </Routes>
 
 
