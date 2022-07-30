@@ -1,11 +1,11 @@
 import React from 'react'
 import Footer from './Footer'
 import './home.css';
-import Search from './Search';
+
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate,Link } from 'react-router';
-import {useEffect} from "react";
+
 import { useDispatch } from 'react-redux';
 import { authActions } from '../../store';
 const Home = () => {

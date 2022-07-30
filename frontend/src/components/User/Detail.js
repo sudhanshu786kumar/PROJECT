@@ -21,12 +21,28 @@ useEffect(() => {
 
   return (
     <div>
-        <a href='/'><h1>logout</h1></a>
+       
 {user &&
 <>
-<h1>hello {user.name}</h1>
-<img src={user.resume} style={{borderRadius:"10px",width:"200px"}}/>
-<p>{user.resume}</p>
+
+<div>
+  <h1 style={{textAlign:"center"}}>Welcome {user.name} !</h1>
+</div>
+<ul>
+  <li>
+  <button class="btn">PersonalData</button>
+  </li>
+  <li>
+    <button class="btn">Educationdata</button>
+  </li>
+  <li>
+    <button className='btn'>EmployementData</button>
+  </li>
+</ul>
+
+<div>
+  <ul></ul>
+</div>
 
 
 </>
