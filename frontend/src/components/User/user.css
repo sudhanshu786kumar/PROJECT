@@ -1,0 +1,32 @@
+#registrationForm{
+    width: 700px;
+    margin-top: 5%;
+}
+#registrationForm h1{
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+#registrationForm input{
+    width: 100%;
+}
+
+@media (max-width: 768px) { 
+    #registrationForm input , label{
+        width: 75%;
+        margin-left: 12%;
+        margin-right: 13%;
+    }
+    #registration .btn{
+        margin-left: 12%;
+    }
+ }
+

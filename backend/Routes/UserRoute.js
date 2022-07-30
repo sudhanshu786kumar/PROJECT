@@ -11,17 +11,18 @@ const storage=multer.diskStorage({
     }
 })
 
-const upload=multer({storage:storage})
+const upload=multer({storage:storage});
 
-
-
+userRoute.get('/veri',Controllers.verifyToken,Controllers.getUser)
 userRoute.post('/signup',upload.single("resume"),Controllers.Personaldata)
 userRoute.put('/signup/employe/:id',Controllers.employData)
 userRoute.get('/',Controllers.getAllUser)
 userRoute.get('/:id',Controllers.getSpecificUser)
 userRoute.put('/:id',Controllers.putSpecificUser)
 userRoute.put('/signup/education/:id',Controllers.Educationdata)
-userRoute.post('/signin',Controllers.signIn)
+userRoute.post('/signin',Controllers.signIn);
+userRoute.post("/logout",Controllers.verifyToken,Controllers.signOut)
+
 
 
 

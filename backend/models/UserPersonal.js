@@ -17,21 +17,30 @@ const userSchema = new schema({
     },
 
     mobile:{
-        type:Number,
+        type:String,
        
     },
-    address:{
-        addr1:String,
-        adr2:String,
-        city:String,
-        state:String,
-        postal:String,
-        country:String,
-    }
-    ,
-    workexp:{
-year:Number,
-month:String
+    addr1:{
+        type:String,
+       
+    },
+    addr2:{
+        type:String
+    },
+    city:{
+        type:String
+    },
+    postal:{
+        type:String
+    },
+    country:{
+
+    },
+    worky:{
+type:String
+    },
+    workm:{
+        type:String
     },
     Pskills:{
         type:String,
@@ -39,8 +48,7 @@ month:String
     },
     resume:{
         type:String,
-        required:false,
-        default:"null"
+       
       
     },                                    //education details
     clg:{
@@ -57,7 +65,7 @@ month:String
     type:String
     },
     NOY:{
-    type:Number
+    type:String
     },
     Eskills:{
         type:String
@@ -76,7 +84,7 @@ month:String
     }
     ,
     expm:{
-    type:Number
+    type:String
     },
     prevemp:{
         type:String
@@ -85,7 +93,7 @@ month:String
         type:String
     },
     pexpm:{
-    type:Number
+    type:String
     }
     
    
