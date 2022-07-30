@@ -1,0 +1,202 @@
+#navMain{
+   background-color: rgb(185, 114, 233);
+  
+}
+#login{
+    transition:all .8s;
+}
+#login:hover{
+    transform: scale(1.1);
+
+}
+.icod{
+width: 12px;
+margin: auto;
+}
+.HotJobs{
+    background-color: #6745e2;
+    text-align: center;
+    text-transform:uppercase;
+    color: #fff;
+}
+.carousel{
+    background-color: #9c89e2;
+
+    padding: 10px;
+}
+.form-label{
+    background-color: rgb(2, 3, 63);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.icimg{
+max-width: 40px;
+margin: auto;
+display: inline-block;
+}
+.nav-link{
+    color: rgb(67, 30, 136) !important;
+    margin-left: 20px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;}
+
+.row>*{
+    margin-top:3rem !important ;
+}
+.nav-link{
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    
+}
+.nav-link:hover{
+    background-color: rgb(0, 0, 0);
+    color: #fff !important;
+}
+.bodyText{
+    font-size: 18px;
+}
+
+#logoimg{
+    position: relative;
+    background-color: white;
+    border-radius: 25px;
+    padding: 0 !important;
+    width:5rem;
+    
+}
+@keyframes play {
+   0%{
+    top:2px
+   }
+   10%{
+   top:5px
+   }
+   20%{
+    top:8px
+   }
+   30%{
+    bottom:10px
+   }
+   50%{
+   bottom:2px
+   }
+   60%{
+   bottom:5px
+   }
+   80%{
+   bottom: 8px
+   }
+   100%{
+   bottom:10px;
+   }
+}
+.blurText{
+    color: grey;
+}
+.container-fluid{
+    max-width: 90%;
+}
+.navbar-toggler{
+    color: #B667f1;
+    font-weight: 600;
+    font-size: 50px;
+}
+#plus{
+    color: rgba(255, 255, 255, 0.605);
+}
+.homeBody{
+    background-color: #fff;
+}
+.card{
+    border:1px solid #fff;
+}
+#login{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#logoInput{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.btn{
+    background-color: #D47AE8;
+    color: #fff;
+}
+.form-control{
+    width: min-content;
+}
+#cardCol{
+    width: 20%;
+    margin-left: 10%;
+}
+
+.HotJobs{
+    font-weight: 600;
+    font-size: 28px;
+    margin-top: 5%;
+ 
+}
+.logcard{
+    background-image: linear-gradient(45deg, rgba(255,0,0,0), rgb(174, 0, 255));
+    margin:auto !important;
+
+}
+
+
+
+
+#companyImage img{
+    width: 8%;
+    height: 6%;
+    margin-left: 5%;
+    border-radius: 35%;
+}
+#imgBox{
+    width: 80%;
+    margin-left: 10%;
+}
+
+.companyLogo{
+    margin-top: 5%;
+    margin-bottom: 2%;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.tips .col{
+    margin-bottom: 2%;
+}
+
+/* footer */
+.copyright{
+    margin-bottom: 0;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 28px;
+    background-color: #B667f1;
+    height: 50px;
+}
+.login{
+    background: #B667f1 !important;
+}
+#login{
+    background-color: #af85cf;
+}
+/* media querry  */
+@media (max-width: 992px) { 
+    #cardCol{
+        width: 50%;
+        margin-left: 20%;
+    }
+}
+
+@media (max-width: 576px) { 
+    #cardCol{
+        width: 80%;
+        margin-left: 15%;
+    }
+}

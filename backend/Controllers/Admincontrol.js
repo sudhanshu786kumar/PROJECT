@@ -1,6 +1,6 @@
 const admin = require('../models/admin');
 const formdata=require('../models/AdminForm')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const postData = async (req, res, next) => {
     const { name, password } = req.body;
 
