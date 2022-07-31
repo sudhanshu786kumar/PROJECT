@@ -1,34 +1,39 @@
 #navMain{
-   background-color: rgb(185, 114, 233);
+   background-color:  rgb(25, 226, 158);
   
 }
 #login{
     transition:all .8s;
+   
 }
+
 #login:hover{
     transform: scale(1.1);
-
+   
 }
 .icod{
 width: 12px;
 margin: auto;
 }
 .HotJobs{
-    background-color: #6745e2;
+    background-color: rgb(25, 226, 158);
     text-align: center;
     text-transform:uppercase;
     color: #fff;
 }
+.jobcard{
+    background-color: #d3d3d3;
+}
 .carousel{
-    background-color: #9c89e2;
+  
 
     padding: 10px;
 }
 .form-label{
-    background-color: rgb(2, 3, 63);
-    color: #fff;
-    padding: 10px;
-    border-radius: 8px;
+    
+    color: rgb(0, 0, 0);
+  
+   
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .icimg{
@@ -36,10 +41,13 @@ max-width: 40px;
 margin: auto;
 display: inline-block;
 }
+.detailD{
+    display: none;
+}
 .nav-link{
-    color: rgb(67, 30, 136) !important;
+    color: rgb(0, 0, 0) !important;
     margin-left: 20px;
-    background-color: rgb(248, 248, 248);
+   
     border-radius: 5px;}
 
 .row>*{
@@ -107,9 +115,17 @@ display: inline-block;
 #plus{
     color: rgba(255, 255, 255, 0.605);
 }
-.homeBody{
-    background-color: #fff;
+.gx-5 .col{
+    background-color: #d3d3d3;
+    margin-left: 30px;
+    font-weight: bold;
+
 }
+.homeBody{
+    background-color: rgb(252, 252, 252);
+   
+}
+
 .card{
     border:1px solid #fff;
 }
@@ -122,8 +138,8 @@ display: inline-block;
     margin-right: 15px;
 }
 .btn{
-    background-color: #D47AE8;
-    color: #fff;
+    background-color: rgb(124, 233, 196);
+    color: rgb(0, 0, 0);
 }
 .form-control{
     width: min-content;
@@ -137,10 +153,12 @@ display: inline-block;
     font-weight: 600;
     font-size: 28px;
     margin-top: 5%;
+    padding: 20px;
+    color: #000;
  
 }
 .logcard{
-    background-image: linear-gradient(45deg, rgba(255,0,0,0), rgb(174, 0, 255));
+   
     margin:auto !important;
 
 }
@@ -180,11 +198,52 @@ display: inline-block;
     background-color: #B667f1;
     height: 50px;
 }
+
+/* Navbar and Off Canvas Section */
+
+.btn_nav {
+    font-size: 1.4rem;
+  }
+  
+  @media (max-width: 360px) {
+    .navbar-text {
+      display: none;
+    }
+  }
+  
+  
+  
+  /* Navbar and Off Canvas Section End */
+  
+  .green1{
+    color: #d47ae8;
+    text-decoration: none;
+  }
+  .green2{
+    color: #d47ae8;
+    text-decoration: none;
+  }
+  .green1:hover{
+    color: #f4beee;
+    text-decoration: none;
+  }
+  .green2:hover{
+    color: #f4beee;
+    text-decoration: none;
+  }
+  
+  /* Remove extra left and right margins, due to padding in columns */
+  .row {
+    margin: 0 -5px;
+  }
 .login{
-    background: #B667f1 !important;
+    background: #ffffff !important;
+    
 }
-#login{
-    background-color: #af85cf;
+.card-body{
+    
+    
+    border-radius: 25px;
 }
 /* media querry  */
 @media (max-width: 992px) { 

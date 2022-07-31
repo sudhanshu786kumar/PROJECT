@@ -7,6 +7,20 @@
     font-weight: 600;
     font-size: 28px;
 }
+.accordian-header{
+    
+
+    border-color: rgb(24,226,162) !important;
+      box-shadow: 2px 2px 4px rgb(44,226,162) !important; 
+
+
+}
+.form-control:focus{
+    border-color: rgb(24,226,162) !important;
+      box-shadow: 2px 2px 4px rgb(44,226,162) !important; } 
+.formy{
+    background-color: #fff
+}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
