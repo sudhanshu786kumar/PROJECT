@@ -79,7 +79,9 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then( window.location.r
                 </a>
               </li>
               {isLoggedIn && (
+                
                 <li className="nav-item">
+                  
                   <a
                     className="nav-link "
                     aria-current="page"
@@ -88,6 +90,9 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then( window.location.r
                     LOGOUT
                     <span className="icod">
                       <img src="./statfiles/signup.png" className="icimg" />
+                    </span>
+                    <span className="icod">
+                      <img src="profile.jpg" className="icimg" />
                     </span>
                   </a>
                 </li>

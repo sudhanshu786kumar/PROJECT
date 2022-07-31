@@ -2,6 +2,7 @@ import React from 'react'
 
 
 import { Link, useNavigate } from 'react-router-dom';
+
 const Job = (props) => {
     const{_id,jobid, jobtitle,
         date, role, resp, compname,
@@ -9,6 +10,7 @@ const Job = (props) => {
           industry, keyword, jobdesc}=props.Sook;
   return (
     <div >
+         
         <ul>
         <li>{jobid}</li>
         <li>{jobtitle}</li>

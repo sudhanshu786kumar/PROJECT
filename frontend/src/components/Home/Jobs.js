@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import Job from './Job';
+import Job from './Job';import Search from './Search';
 import './home.css'
 import  { useEffect, useState } from 'react';
 
@@ -18,6 +18,7 @@ const Jobs = () => {
     console.log(jobs)
   return (
     <div>
+        <Search/>
       <h1>JOBS</h1>
         <ul className='jobs'>
             {jobs && jobs.map((jobe,i)=>(

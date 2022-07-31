@@ -58,7 +58,7 @@ const[pers,setpers]=useState(false)
 {user &&
 <>
 
-<div style={{textAlign:"center",backgroundColor:""}}><h1>Hello {user.name} !<img style={{maxWidth:"100px",borderRadius:"80px"}} src="https://source.unsplash.com/1600x900/?boy"/></h1></div>
+<div style={{textAlign:"center",backgroundColor:""}}><h1>Hello {user.name} !</h1></div>
 <div class="accordion" id="accordionPanelsStayOpenExample">
   <div class="accordion-item">
     <h2 class="accordion-header" id="panelsStayOpen-headingOne">
