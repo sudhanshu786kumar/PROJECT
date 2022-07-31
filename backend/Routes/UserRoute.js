@@ -18,11 +18,11 @@ userRoute.post('/signup',upload.single("resume"),Controllers.Personaldata)
 userRoute.put('/signup/employe/:id',Controllers.employData)
 userRoute.get('/',Controllers.getAllUser)
 userRoute.get('/:id',Controllers.getSpecificUser)
-userRoute.put('/:id',Controllers.putSpecificUser)
+userRoute.put('/cust/:id',Controllers.putSpecificUser)
 userRoute.put('/signup/education/:id',Controllers.Educationdata)
 userRoute.post('/signin',Controllers.signIn);
-userRoute.post("/logout",Controllers.verifyToken,Controllers.signOut)
-
+userRoute.post('/logout',Controllers.verifyToken,Controllers.signOut)
+userRoute.get('/refresh', Controllers.refreshToken, Controllers.verifyToken,Controllers.getUser);
 
 
 
