@@ -6,6 +6,9 @@ import Register from './components/User/Register';
 import Form from './components/Admin/Form';
 import Detail from './components/User/Detail';
 import { useSelector } from 'react-redux';
+import Education from './components/User/Education';
+import Employment from './components/User/Employment';
+
 const App = () => {
   const isLoggedIn=useSelector(state=>state.isLoggedIn)
   console.log(isLoggedIn)
@@ -20,8 +23,8 @@ const App = () => {
             <Route path='/register' element={<Register/>} exact/>
             
             <Route path='/users' element={<Detail/>} exact/>
-            <Route path='/' element={<Home/>} exact/>
-            <Route path='/' element={<Home/>} exact/> 
+            <Route path='/education/:id' element={<Education/>} exact/>
+            <Route path='/employment/:id' element={<Employment/>} exact/> 
         </Routes>
 
 

@@ -61,7 +61,7 @@ const handleSubmit=(e)=>{
             <div className="col-sm-6">
               <div className="card logcard">
                 <div className="card-body">
-                  <img src="logo.png" width="100%" padding="8px" />
+                  <img src="logo.png" width="50%" padding="8px" />
                 </div>
                 <div className="input-group mb-3">
                   <input type="text" id="logoInput" className="form-control" placeholder="Skills" aria-label="Username" />
@@ -77,7 +77,7 @@ const handleSubmit=(e)=>{
 
 
                   <form id="login" onSubmit={handleSubmit}   encType="multipart/form-data">
-                    <div className="mb-3 " >
+                    <div className="mb-3 logfc" >
                       <div><h1>LOGIN <span><img src='./statfiles/login.png' className='icimg'/></span></h1>
                       
                       </div> <br/>
@@ -111,7 +111,7 @@ const handleSubmit=(e)=>{
                   <div className="row row-cols-1 row-cols-md-3 g-4">
                     <div className="col" id='cardCol'>
                       <div className="card">
-                        <div className="card-body">
+                        <div className="card-body jobcard">
                           <h3> LAD Software Solution PVT LTD.</h3>
                           <p> VP of marketing-B2B?</p>
                           <h5>Experience :8-13 years</h5>
@@ -121,7 +121,7 @@ const handleSubmit=(e)=>{
                     </div>
                     <div className="col" id='cardCol'>
                       <div className="card">
-                        <div className="card-body">
+                        <div className="card-body jobcard">
                           <h3> LAD Software Solution PVT LTD.</h3>
                           <p> VP of marketing-B2B?</p>
                           <h5>Experience :8-13 years</h5>
@@ -131,42 +131,7 @@ const handleSubmit=(e)=>{
                     </div>
                     <div className="col" id='cardCol'>
                       <div className="card">
-                        <div className="card-body">
-                          <h3> LAD Software Solution PVT LTD.</h3>
-                          <p> VP of marketing-B2B?</p>
-                          <h5>Experience :8-13 years</h5>
-                          <h5>Location:Jaipur/Coachi</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="carousel-item">
-                  <div className="row row-cols-1 row-cols-md-3 g-4">
-                    <div className="col" id='cardCol'>
-                      <div className="card">
-                        <div className="card-body">
-                          <h3> LAD Software Solution PVT LTD.</h3>
-                          <p> VP of marketing-B2B?</p>
-                          <h5>Experience :8-13 years</h5>
-                          <h5>Location:Jaipur/Coachi</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col" id='cardCol'>
-                      <div className="card">
-                        <div className="card-body">
-                          <h3> LAD Software Solution PVT LTD.</h3>
-                          <p> VP of marketing-B2B?</p>
-                          <h5>Experience :8-13 years</h5>
-                          <h5>Location:Jaipur/Coachi</h5>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col" id='cardCol'>
-                      <div className="card">
-                        <div className="card-body">
+                        <div className="card-body jobcard">
                           <h3> LAD Software Solution PVT LTD.</h3>
                           <p> VP of marketing-B2B?</p>
                           <h5>Experience :8-13 years</h5>
@@ -181,7 +146,7 @@ const handleSubmit=(e)=>{
                   <div className="row row-cols-1 row-cols-md-3 g-4">
                     <div className="col" id='cardCol'>
                       <div className="card">
-                        <div className="card-body">
+                        <div className="card-body jobcard">
                           <h3> LAD Software Solution PVT LTD.</h3>
                           <p> VP of marketing-B2B?</p>
                           <h5>Experience :8-13 years</h5>
@@ -191,7 +156,7 @@ const handleSubmit=(e)=>{
                     </div>
                     <div className="col" id='cardCol'>
                       <div className="card">
-                        <div className="card-body">
+                        <div className="card-body  jobcard">
                           <h3> LAD Software Solution PVT LTD.</h3>
                           <p> VP of marketing-B2B?</p>
                           <h5>Experience :8-13 years</h5>
@@ -201,7 +166,42 @@ const handleSubmit=(e)=>{
                     </div>
                     <div className="col" id='cardCol'>
                       <div className="card">
-                        <div className="card-body">
+                        <div className="card-body jobcard">
+                          <h3> LAD Software Solution PVT LTD.</h3>
+                          <p> VP of marketing-B2B?</p>
+                          <h5>Experience :8-13 years</h5>
+                          <h5>Location:Jaipur/Coachi</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="carousel-item">
+                  <div className="row row-cols-1 row-cols-md-3 g-4">
+                    <div className="col" id='cardCol'>
+                      <div className="card ">
+                        <div className="card-body jobcard">
+                          <h3> LAD Software Solution PVT LTD.</h3>
+                          <p> VP of marketing-B2B?</p>
+                          <h5>Experience :8-13 years</h5>
+                          <h5>Location:Jaipur/Coachi</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col" id='cardCol'>
+                      <div className="card">
+                        <div className="card-body jobcard">
+                          <h3> LAD Software Solution PVT LTD.</h3>
+                          <p> VP of marketing-B2B?</p>
+                          <h5>Experience :8-13 years</h5>
+                          <h5>Location:Jaipur/Coachi</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col" id='cardCol'>
+                      <div className="card">
+                        <div className="card-body jobcard">
                           <h3> LAD Software Solution PVT LTD.</h3>
                           <p> VP of marketing-B2B?</p>
                           <h5>Experience :8-13 years</h5>
@@ -225,7 +225,7 @@ const handleSubmit=(e)=>{
 
           {/* company Logo part  */}
 
-          <h1 className="companyLogo">Select by Companies</h1>
+          <h1 className="companyLogo" style={{marginBottom:"100px",backgroundColor:"rgb(25, 226, 158)",textAlign:"center",padding:"20px",textTransform:"uppercase"}}>Select by Companies</h1>
 
           <div id="companyImage" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
@@ -266,7 +266,7 @@ const handleSubmit=(e)=>{
             </button>
           </div>
 
-          <h1 className="companyLogo">Career Tips</h1>
+          <h1 className="companyLogo" style={{backgroundColor:"rgb(25, 226, 158)",textAlign:"center",padding:"20px",textTransform:"uppercase",marginTop:"100px"}}>Career Tips</h1>
           <div className="tips">
             <div className="container px-4">
               <div className="row gx-5">

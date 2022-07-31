@@ -51,48 +51,48 @@ type:String
        
       
     },                                    //education details
-    clg:{
+    collegeName:{
         type:String
     
     },
-    YOP:{
+    gradYear:{
     type:String
     },
-    isgraduated:{
+    graduated:{
     type:String
     },
-    graduateSchool:{
+    schoolName:{
     type:String
     },
-    NOY:{
+    schoolYear:{
     type:String
     },
-    Eskills:{
+    skills:{
         type:String
     },
-    certf:{
+    certfication:{
         type:String
     },                          //employee details
-    cemp:{
+    currEmployee:{
         type:String
     },
-    dest:{
+    destination:{
         type:String
     },
-    jobdesc:{
+    description1:{
         type:String
     }
     ,
-    expm:{
+    monthExp1:{
     type:String
     },
-    prevemp:{
+    prevEmployee:{
         type:String
     },
-    pjobdesc:{
+    description2:{
         type:String
     },
-    pexpm:{
+    monthExp2:{
     type:String
     }
     

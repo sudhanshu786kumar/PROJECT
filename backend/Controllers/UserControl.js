@@ -114,14 +114,14 @@ const PersonalData = async (req, res) => {
 }
 
 const employData = async (req, res) => {
-    const { cemp, dest, jobdesc, expm, prevemp, pjobdesc, pexpm } = req.body
+    const { currEmployee,destination,description1,monthExp1,prevEmployee,description2,monthExp2} = req.body
     let id = req.params.id;
     let data;
     try {
         data = await personalSchema.findByIdAndUpdate(id, {
 
 
-            cemp, dest, jobdesc, expm, prevemp, pjobdesc, pexpm
+            currEmployee,destination,description1,monthExp1,prevEmployee,description2,monthExp2
 
 
         })
@@ -139,13 +139,14 @@ const employData = async (req, res) => {
 
 
 const Educationdata = async (req, res) => {
-    const { clg, YOP, isgraduated, graduateSchool, NOY, Eskills, certf } = req.body
+    const { collegeName,gradYear,graduated,schoolName,schoolYear,skills,certfication} = req.body
     let id = req.params.id;
     let data;
     try {
         data = await personalSchema.findByIdAndUpdate(id, {
-            clg, YOP, isgraduated, graduateSchool, NOY, Eskills, certf
+            collegeName,gradYear,graduated,schoolName,schoolYear,skills,certfication
         })
+        await data.save()
     }
     catch (err) {
         console.log(err)
