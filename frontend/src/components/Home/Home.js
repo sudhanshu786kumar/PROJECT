@@ -66,7 +66,7 @@ const handleSubmit=(e)=>{
                 <div className="input-group mb-3">
                   <input type="text" id="logoInput" className="form-control" placeholder="Skills" aria-label="Username" />
                   <input type="text" id="logoInput" className="form-control" placeholder="Location" aria-label="Username" />
-                  <button type="button" id="logoInput" className="btn ">Find Jobs</button>
+                  <a href='/jobs'><button type="button" id="logoInput" className="btn" >Find Jobs</button></a>
                 </div>
               </div>
             </div>
