@@ -11,6 +11,16 @@
     transform: scale(1.1);
    
 }
+#Adminlogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 35px;
+    border-left: 40px solid rgb(25, 226, 158);
+    border-right: 40px solid rgb(25, 226, 158);
+    
+}
 .icod{
 width: 12px;
 margin: auto;
@@ -53,6 +63,12 @@ display: inline-block;
 .row>*{
     margin-top:3rem !important ;
 }
+.jobs{
+    background-color: rgb(155, 139, 139);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 .nav-link{
     color: white;
     font-weight: 600;
@@ -62,6 +78,13 @@ display: inline-block;
 .nav-link:hover{
     background-color: rgb(0, 0, 0);
     color: #fff !important;
+}
+.logogif{
+    display: flex;
+    align-items: center;
+    justify-content: center
+    
+    ;
 }
 .bodyText{
     font-size: 18px;

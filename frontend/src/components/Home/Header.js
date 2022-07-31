@@ -31,7 +31,7 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then(hist('/'));
       <nav className="navbar navbar-expand-lg " id="navMain">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            <img alt="" src="./logo.png" id="logoimg" style={logo} />
+            <img alt="" src="./logo.gif" id="logoimg" style={logo} />
           </a>
           <button
             className="navbar-toggler"
@@ -49,12 +49,12 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then(hist('/'));
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="#">
+                <a className="nav-link " aria-current="page" href="/">
                   HOME
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="#">
+                <a className="nav-link " aria-current="page" href="/jobs">
                   JOBS
                 </a>
               </li>

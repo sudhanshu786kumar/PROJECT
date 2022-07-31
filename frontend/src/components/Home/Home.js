@@ -60,8 +60,8 @@ const handleSubmit=(e)=>{
           <div className="row">
             <div className="col-sm-6">
               <div className="card logcard">
-                <div className="card-body">
-                  <img src="logo.png" width="50%" padding="8px" />
+                <div className="card-body logogif">
+                  <img src="logo.gif" width="50%" padding="8px" />
                 </div>
                 <div className="input-group mb-3">
                   <input type="text" id="logoInput" className="form-control" placeholder="Skills" aria-label="Username" />

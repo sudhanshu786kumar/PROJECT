@@ -50,7 +50,7 @@ const Employment = () => {
   return (
     <>
       <div className=" formy d-flex justify-content-center">
-        <form id="registrationForm" onDoubleClick={HandleSubmit} encType="multipart/form-data">
+        <form id="registrationForm" onSubmit={HandleSubmit} encType="multipart/form-data">
           <h1>Employment Details</h1>
           <div class="mb-3">
             <label for="RegistrationName" class="form-label">
