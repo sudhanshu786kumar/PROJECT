@@ -8,7 +8,8 @@ import Detail from './components/User/Detail';
 import { useSelector } from 'react-redux';
 import Education from './components/User/Education';
 import Employment from './components/User/Employment';
-
+import Admin from './components/Admin/Admin.js'
+import Personal from './components/User/Personal'
 const App = () => {
   const isLoggedIn=useSelector(state=>state.isLoggedIn)
   console.log(isLoggedIn)
@@ -21,10 +22,11 @@ const App = () => {
         <Routes>
             <Route path='/' element={<Home/>} exact/>
             <Route path='/register' element={<Register/>} exact/>
-            
+            <Route path='/admin' element={<Admin/>} exact/>
             <Route path='/users' element={<Detail/>} exact/>
             <Route path='/education/:id' element={<Education/>} exact/>
             <Route path='/employment/:id' element={<Employment/>} exact/> 
+            <Route path='/Personal/:id' element={<Personal/>} exact/> 
         </Routes>
 
 

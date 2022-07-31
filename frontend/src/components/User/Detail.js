@@ -3,13 +3,34 @@ import axios from 'axios';
 import{useEffect,useState} from 'react';
 import "./user.css";
 import { Link } from 'react-router-dom';
-
+let firstRender = true;
 axios.defaults.withCredentials=true;
 
 const Detail = () => {
 
     const [user, setUser] = useState()
-    const [emp, setemp] = useState()
+    const [emp, setemp] = useState();
+
+
+
+    const refreshToken = async () => {
+      const res = await axios
+        .get("http://localhost:5000/user/refresh", {
+          withCredentials: true,
+        })
+        .catch((err) => console.log(err));
+  
+      const data = await res.data;
+      return data;
+    };
+
+
+
+
+
+
+
+
     const sendRequest=async()=>{
         const res=await  axios.get("http://localhost:5000/user/veri",{
             withCredentials:true
@@ -19,12 +40,16 @@ const Detail = () => {
     }
 
 
-
-useEffect(() => {
-  sendRequest().then((data)=>setUser(data.user))
-
-  
-}, [])
+    useEffect(() => {
+      if (firstRender) {
+        firstRender = false;
+        sendRequest().then((data) => setUser(data.user));
+      }
+      let interval = setInterval(() => {
+        refreshToken().then((data) => setUser(data.user));
+      }, 1000 * 29);
+      return () => clearInterval(interval);
+    }, []);
 
 const[pers,setpers]=useState(false)
   return (
@@ -44,19 +69,19 @@ const[pers,setpers]=useState(false)
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
       <div class="accordion-body">
         <ul>
-          <li>{user.name}</li>  
-          <li>{user.email}</li>
-          <li>{user.addr1}</li>
-          <li>{user.addr2}</li>
-          <li>{user.mobile}</li>
-          <li>{user.city}</li>
-          <li>{user.postal}</li>
-          <li>{user.country}</li>
-          <li>{user.worky}</li>
-          <li>{user.workm}</li>
-          <li>{user.Pskills}</li>
-         <li><a href={user.resume}>Resume</a></li>
-         <li><button className='btn btn-success'><a >Edit</a></button></li>
+          <li> NAME: {user.name}</li>  
+          <li>EMAIL: {user.email}</li>
+          <li>ADDRESS: {user.addr1} , {user.addr2}</li>
+      
+          <li>MOBILE: {user.mobile}</li>
+          <li>CITY: {user.city}</li>
+          <li>PIN: {user.postal}</li>
+          <li>Country: {user.country}</li>
+          <li>WORK-YEAR : {user.worky}</li>
+          <li>WORK_MONTH: {user.workm}</li>
+          <li>SKILLS: {user.Pskills}</li>
+         <li>RESUME : <a href={user.resume}>Resume</a></li>
+         <li><button className='btn btn-success' ><a href={`/personal/${user._id}`} >Edit</a></button></li>
         </ul>
       </div>
     </div>
@@ -70,13 +95,13 @@ const[pers,setpers]=useState(false)
     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
       <div class="accordion-body">
       <ul>
-          <li>{user.collegeName}</li>  
-          <li>{user.gradYear}</li>
-          <li>{user.graduated}</li>
-          <li>{user.schoolName}</li>
-          <li>{user.schoolYear}</li>
-          <li>{user.skills}</li>
-          <li>{user.certification}</li>
+          <li>COLLEGE-NAME: {user.collegeName}</li>  
+          <li>GRADUATION-YEAR: {user.gradYear}</li>
+          <li>GRADUATED: {user.graduated}</li>
+          <li>SCHOOL-NAME: {user.schoolName}</li>
+          <li>SCHOOL-YEAR:{user.schoolYear}</li>
+          <li>SKILLS: {user.skills}</li>
+          <li>CERTIFICATION: {user.certification}</li>
        
         
        
@@ -94,13 +119,13 @@ const[pers,setpers]=useState(false)
     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
       <div class="accordion-body">
       <ul>
-          <li>{user.currEmployee}</li>  
-          <li>{user.destination}</li>
-          <li>{user.description1}</li>
-          <li>{user.monthExp1}</li>
-          <li>{user.prevEmployee}</li>
-          <li>{user.description2}</li>
-          <li>{user. monthExp2}</li>
+          <li>CURRENT-EMPLOYEE:{user.currEmployee}</li>  
+          <li>DESTINATION: {user.destination}</li>
+          <li>DESCRIPTION1: {user.description1}</li>
+          <li>MONTH-EXPERIENCE: {user.monthExp1}</li>
+          <li>PREVIOUS-EMPLOYEE: {user.prevEmployee}</li>
+          <li>DESCRITION: {user.description2}</li>
+          <li>MONTH-EXPERIENCE2: {user. monthExp2}</li>
        
         
        

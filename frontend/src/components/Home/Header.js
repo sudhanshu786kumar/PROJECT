@@ -24,7 +24,7 @@ return new Error("unable to logout")
 }
   const handleLogout=()=>{
 sendRequest().
-then(()=>dispatch(authActions.logout())).then(hist('/'));
+then(()=>dispatch(authActions.logout())).then(hist('/')).then(hist('/'));
   }
   return (
     <div>
