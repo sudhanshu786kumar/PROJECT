@@ -3,33 +3,33 @@ const formdata=require('../models/AdminForm')
 const bcrypt = require('bcryptjs')
 const postData = async (req, res, next) => {
     const { name, password } = req.body;
-
+let admins;
     try {
-        const admin = new schema({
+         admins = new admin({
             name,
             password
         })
 
         const salt = await bcrypt.genSalt(10);
-        admin.password = await bcrypt.hash(admin.password, salt);
+        admins.password = await bcrypt.hash(admins.password, salt);
 
 
-        admin.save().json({ admin });
+        admins.save()
       
     } catch (error) {
         console.log(error)
     }
     return res.status(201).json((
-        admin
+        admins
     ))
 
 }
 
 const logData = async (req, res) => {
     const { name, password } = req.body;
-    const admin = await schema.findOne({ name: name });
-    if (admin) {
-        const vpassword = await bcrypt.compare(password, admin.password);
+    const admins = await admin.findOne({ name: name });
+    if (admins) {
+        const vpassword = await bcrypt.compare(password, admins.password);
         if (vpassword) {
             res.status(200).json({ message: "Log in Success" });
         } else {
@@ -42,7 +42,10 @@ const logData = async (req, res) => {
 }
 
 const formData = async (req, res) => {
-    const { jobid, jobtitle, date, role, resp, compname, exp, salary, loc, skills, deg, compinfo, emptype, industry, keyword, jobdesc } = req.body;
+    const { jobid, jobtitle,
+         date, role, resp, compname,
+          exp, salary, loc, skills, deg, compinfo, emptype,
+           industry, keyword, jobdesc } = req.body;
     let data;
     try {
         data = await new formdata({

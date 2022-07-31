@@ -1,5 +1,6 @@
 import React from 'react'
-import './home.css'
+import './home.css';
+
 const Footer = () => {
   let footerstyle = {
   color:"#000",
@@ -10,9 +11,12 @@ const Footer = () => {
     
   }
   return (
+    <>
+   
     <p className="copyright" style={footerstyle}>
       Copyright &copy;2022 BruteForce
     </p>
+    </>
   )
 }
 

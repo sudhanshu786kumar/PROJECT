@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "../User/user.css";
+import axios from "axios";
 const Form = () => {
+  const[blo,setblo]=useState(false)
   const initialValues = {
     jobid: "",
     jobtitle: "",
@@ -21,6 +23,44 @@ const Form = () => {
     keyword: "",
     jobdesc: "",
   };
+
+  const sendRequest=async()=>{
+ 
+   
+    const res = await axios.post("http://localhost:5000/admin/data",{
+      jobid: formValues.jobid,
+      jobtitle: formValues.jobtitle,
+      date: formValues.date,
+      role: formValues.role,
+      resp: formValues.resp,
+      compname: formValues.compname,
+      exp: formValues.exp,
+      salary: formValues.salary,
+      pos: formValues.pos,
+      loc: formValues.loc,
+      skills: formValues.skills,
+      deg: formValues.deg,
+      compinfo: formValues.compinfo,
+      emptype: formValues.emptype,
+      industry: formValues.industry,
+      keyword: formValues.keyword,
+      jobdesc: formValues.jobdesc,
+    }).catch((err)=>console.log(err))
+  
+  const data=res.data;
+  return data;
+  }
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+
+
+sendRequest().then(setblo(true))
+
+
+
+
+}
+
   const [formValues, setFormValues] = useState(initialValues);
   const handleChange = (e) => {
     console.log(e.target.value);
@@ -30,8 +70,8 @@ const Form = () => {
   };
   return (
     <>
-      <div className="d-flex justify-content-center">
-        <form id="registrationForm">
+      <div className="d-flex justify-content-center" >
+        <form id="registrationForm" onSubmit={handleSubmit}   encType="multipart/form-data" >
           <h1>Admin | Employer Post Jobs</h1>
           <div class="mb-3">
             <label for="RegistrationName" class="form-label">
@@ -159,7 +199,7 @@ const Form = () => {
               Loaction
             </label>
             <input
-              type="number"
+              type="text"
               name="loc"
               class="form-control"
               id="inputZip"
@@ -173,7 +213,7 @@ const Form = () => {
               Skills and Qualification
             </label>
             <input
-              type="number"
+              type="text"
               name="skills"
               class="form-control"
               style={{ width: "700px" }}
@@ -264,6 +304,7 @@ const Form = () => {
           </button>
         </form>
       </div>
+      {blo && <h1>posted !!</h1>}
     </>
   );
 };
