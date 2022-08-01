@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../User/user.css";
 import axios from "axios";
 const Form = () => {
-  const[blo,setblo]=useState(false)
+  const [blo, setblo] = useState(false);
   const initialValues = {
     jobid: "",
     jobtitle: "",
@@ -24,42 +24,37 @@ const Form = () => {
     jobdesc: "",
   };
 
-  const sendRequest=async()=>{
- 
-   
-    const res = await axios.post("http://localhost:5000/admin/data",{
-      jobid: formValues.jobid,
-      jobtitle: formValues.jobtitle,
-      date: formValues.date,
-      role: formValues.role,
-      resp: formValues.resp,
-      compname: formValues.compname,
-      exp: formValues.exp,
-      salary: formValues.salary,
-      pos: formValues.pos,
-      loc: formValues.loc,
-      skills: formValues.skills,
-      deg: formValues.deg,
-      compinfo: formValues.compinfo,
-      emptype: formValues.emptype,
-      industry: formValues.industry,
-      keyword: formValues.keyword,
-      jobdesc: formValues.jobdesc,
-    }).catch((err)=>console.log(err))
-  
-  const data=res.data;
-  return data;
-  }
-  const handleSubmit=(e)=>{
-    e.preventDefault()
+  const sendRequest = async () => {
+    const res = await axios
+      .post("http://localhost:5000/admin/data", {
+        jobid: formValues.jobid,
+        jobtitle: formValues.jobtitle,
+        date: formValues.date,
+        role: formValues.role,
+        resp: formValues.resp,
+        compname: formValues.compname,
+        exp: formValues.exp,
+        salary: formValues.salary,
+        pos: formValues.pos,
+        loc: formValues.loc,
+        skills: formValues.skills,
+        deg: formValues.deg,
+        compinfo: formValues.compinfo,
+        emptype: formValues.emptype,
+        industry: formValues.industry,
+        keyword: formValues.keyword,
+        jobdesc: formValues.jobdesc,
+      })
+      .catch((err) => console.log(err));
 
+    const data = res.data;
+    return data;
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-sendRequest().then(setblo(true))
-
-
-
-
-}
+    sendRequest().then(setblo(true));
+  };
 
   const [formValues, setFormValues] = useState(initialValues);
   const handleChange = (e) => {
@@ -70,8 +65,12 @@ sendRequest().then(setblo(true))
   };
   return (
     <>
-      <div className="d-flex justify-content-center" >
-        <form id="registrationForm" onSubmit={handleSubmit}   encType="multipart/form-data" >
+      <div className="d-flex justify-content-center">
+        <form
+          id="registrationForm"
+          onSubmit={handleSubmit}
+          encType="multipart/form-data"
+        >
           <h1>Admin | Employer Post Jobs</h1>
           <div class="mb-3">
             <label for="RegistrationName" class="form-label">
@@ -130,11 +129,12 @@ sendRequest().then(setblo(true))
             <label for="RegistrationAddress" class="form-label">
               Responsibility
             </label>
-            <input
+            <textarea
               type="text"
               name="resp"
               class="form-control"
               id="RegistrationAddress"
+              style={{ width: "700px" }}
               value={formValues.resp}
               onChange={handleChange}
             />
@@ -171,7 +171,7 @@ sendRequest().then(setblo(true))
               salary Range
             </label>
             <input
-              type="Number"
+              type="text"
               name="salary"
               class="form-control"
               id="inputState"
@@ -212,7 +212,7 @@ sendRequest().then(setblo(true))
             <label for="experience" class="form-label">
               Skills and Qualification
             </label>
-            <input
+            <textarea
               type="text"
               name="skills"
               class="form-control"
@@ -238,11 +238,12 @@ sendRequest().then(setblo(true))
             <label for="Resume" class="form-label">
               Company Info
             </label>
-            <input
+            <textarea
               class="form-control"
               name="compinfo"
               type="text"
               id="Resume"
+              style={{ width: "700px" }}
               value={formValues.compinfo}
               onChange={handleChange}
             />
@@ -290,11 +291,12 @@ sendRequest().then(setblo(true))
             <label for="RegistrationSkills" class="form-label">
               Job Description
             </label>
-            <input
+            <textarea
               type="text"
               name="jobdesc"
               class="form-control"
               id="RegistrationSkills"
+              style={{ width: "700px" }}
               value={formValues.jobdesc}
               onChange={handleChange}
             />

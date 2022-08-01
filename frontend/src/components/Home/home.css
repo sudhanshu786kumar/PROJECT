@@ -52,21 +52,27 @@
 
   border-radius: 5px;
 }
-
 .row > * {
   margin-top: 3rem !important ;
 }
 .jobs {
   background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+  row-gap: 2.5rem;
   list-style: none;
+  margin-bottom: 80px;
 }
 #jobcard {
   box-shadow: 2px 2px 2px rgb(103, 102, 102);
   border-left: 2px solid rgb(103, 102, 102);
- 
+  box-sizing: content-box;
+  height: 400px;
+}
+.jobdetail {
+  margin-left: 20px;
+  margin-bottom: 70px;
 }
 .nav-link {
   color: white;
@@ -140,6 +146,7 @@
 }
 .homeBody {
   background-color: rgb(252, 252, 252);
+  margin-bottom: 60px;
 }
 
 .card {
@@ -156,6 +163,12 @@
 .btn {
   background-color: rgb(124, 233, 196);
   color: rgb(0, 0, 0);
+  border: 0px;
+  box-shadow: none !important;
+}
+.btn:hover {
+  border: 1px solid black !important;
+  font-weight: bold;
 }
 .form-control {
   width: min-content;

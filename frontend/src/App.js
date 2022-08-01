@@ -12,6 +12,7 @@ import Admin from "./components/Admin/Admin.js";
 import Personal from "./components/User/Personal";
 import Jobs from "./components/Home/Jobs";
 import JobDetails from "./components/Home/JobDetails";
+import Footer from "./components/Home/Footer";
 const App = () => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   console.log(isLoggedIn);
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/detail/:id" element={<JobDetails />} exact />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 };
