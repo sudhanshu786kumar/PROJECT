@@ -4,6 +4,7 @@ import { useNavigate } from "react-router";
 import "./home.css";
 import axios from "axios";
 import { authActions } from "../../store";
+import { Link } from "react-router-dom";
 axios.defaults.withCredentials = true;
 let logo = {
   maxWidth: "200px",
@@ -43,20 +44,20 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then( window.location.r
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon">
-              <span id="plus"></span>
+              <span id="plus" style={{color:"black"}}>=</span>
             </span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="/">
+                <Link className="nav-link " aria-current="page" to="/">
                   HOME
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="/jobs">
+                <Link className="nav-link " aria-current="page" to="/jobs">
                   JOBS
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
                 <a className="nav-link " aria-current="page" href="#">
@@ -95,8 +96,11 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then( window.location.r
                       <img src="profile.jpg" className="icimg" />
                     </span>
                   </a>
+                  
                 </li>
+                
               )}
+            
             </ul>
           </div>
         </div>
