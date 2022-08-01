@@ -3,24 +3,26 @@ import axios from "axios";
 import { useParams } from "react-router";
 
 const JobDetails = () => {
-  const id = useParams.id;
-  const [inputs, setInputs] = useState();
+  const id = useParams().id;
+  console.log(id)
+
   const fetchHandler = async () => {
-    return await axios
+  return await axios
       .get(`http://localhost:5000/admin/job/${id}`)
       .then((res) => res.data);
-  };
-  useEffect(() => {
-    fetchHandler().then((data) => setInputs(data));
-  }, []);
-  console.log(inputs);
+      
+  }
+  const [jobs, newval] = useState([]);
+  useEffect(()=>{fetchHandler().then((d)=>newval(d));},[id]);
+ 
+ console.log(jobs.jobdesc)
   return (
     <>
       <div>
-        <h3>{inputs.JobDetails}</h3>
+        <h3>{jobs.jobdesc}</h3>
         <div></div>
         <div>
-          <h2>Job Description</h2>
+          <h2></h2>
           <p>
             <strong>
               <u>UI Developer with React JS</u>

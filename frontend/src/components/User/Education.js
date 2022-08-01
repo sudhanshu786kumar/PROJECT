@@ -24,11 +24,7 @@ const Education = () => {
     setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
   };
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-    handlePost().then(history('/user'))
-    
-  }
+ 
   const handlePost = async () => {
 
     
@@ -51,6 +47,11 @@ const Education = () => {
     return data}catch(err){
       console.log(err)
     }
+  }
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    handlePost().then(history('/user'))
+    
   }
   return (
     <>

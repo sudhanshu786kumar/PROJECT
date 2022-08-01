@@ -48,7 +48,7 @@ const Job = (props) => {
           <li class="list-group-item">Job Description: {jobdesc}</li>
         </ul>
         <div class="card-body">
-          <a href={`/job/JobDetails/${_id}`} class="card-link">
+          <a href={`/detail/${_id}`} class="card-link">
             Show Job Details
           </a>
         </div>

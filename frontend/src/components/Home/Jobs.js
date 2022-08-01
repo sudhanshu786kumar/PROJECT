@@ -18,6 +18,7 @@ const Jobs = () => {
   }, []);
 
   console.log(jobs);
+  let location="Pune"
   return (
     <div>
       <Search />
@@ -27,7 +28,10 @@ const Jobs = () => {
           {jobs &&
             jobs.map((jobe, i) => (
               <li key={i}>
+                
+                
                 <Job Sook={jobe} />
+
               </li>
             ))}
         </ul>

@@ -22,11 +22,7 @@ const Employment = () => {
     setFormValues({ ...formValues, [name]: value });
     console.log(formValues);
   };
-  const HandleSubmit = (e) => {
-    e.preventDefault();
-    handlePost().then(console.log("done"))
-    
-  }
+  
   const handlePost = async () => {
 
    
@@ -46,6 +42,11 @@ const Employment = () => {
     const data=await res.data
     console.log(res)
     return data}catch(err){console.log(err)}
+  }
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+    handlePost().then(console.log("done"))
+    
   }
   return (
     <>
