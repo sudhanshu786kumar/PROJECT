@@ -1,8 +1,6 @@
 const mongoose=require('mongoose');
 const schema= mongoose.Schema;
-const addressSchema=mongoose.Schema({
-    
-})
+
 const userSchema = new schema({
     name:{
         type:String,                   //personal details

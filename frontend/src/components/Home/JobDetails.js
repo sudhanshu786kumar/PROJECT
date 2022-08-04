@@ -1,39 +1,57 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
+import Footer from "./Footer";
 
 const JobDetails = () => {
   const id = useParams().id;
-  console.log(id)
+  console.log(id);
 
   const fetchHandler = async () => {
-  return await axios
+    return await axios
       .get(`http://localhost:5000/admin/job/${id}`)
       .then((res) => res.data);
-      
-  }
+  };
   const [jobs, newval] = useState([]);
-  useEffect(()=>{fetchHandler().then((d)=>newval(d));},[id]);
- 
- console.log(jobs.jobdesc)
+  const [apply, setApply] = useState(false);
+  const handleApply=()=>{
+    setApply(true)
+  }
+  useEffect(() => {
+    fetchHandler().then((d) => newval(d));
+  }, [id]);
+
+  console.log(jobs.jobtitle);
   return (
     <>
-      <div>
-        <h3>{jobs.jobdesc}</h3>
-        <div></div>
+      <div className="jobdetail">
+        <h3>{jobs.jobtitle}</h3>
+        <div>
+          <ul>
+            <li>{jobs.exp}</li>
+            <li>{jobs.salary}</li>
+            <li>{jobs.loc}</li>
+          </ul>
+        </div>
         <div>
           <h2></h2>
           <p>
             <strong>
-              <u>UI Developer with React JS</u>
+              <u>Job Role:{jobs.role}</u>
             </strong>
           </p>
           <p>
             <b>
               <u>Job Location:</u>
             </b>
-            Pune, Bangalore
+            {jobs.loc}
           </p>
+        </div>
+        <div>
+          <h4>
+            <u>About Company:</u>
+          </h4>
+          <p>{jobs.compinfo}</p>
         </div>
         <div>
           <p>
@@ -41,71 +59,53 @@ const JobDetails = () => {
               <u>Responsibilities:</u>
             </b>
           </p>
+          <p>{jobs.resp}</p>
+        </div>
+        <div>
           <p>
-            <ul>
-              <li>Delivering a complete front end application</li>
-              <li>
-                Writing tested, idiommatic and documented JavaSript, HTML and
-                CSS3
-              </li>
-              <li>
-                Coordinating the workflow between the graphic designer, the HTML
-                coder
-              </li>
-              <li>
-                Cooperating with the back-end developer in the process of
-                building the RESTful API
-              </li>
-              <li>Communicating with external web services</li>
-              <li>
-                Ensure effective Design, Development, Validation and Support
-                activities in line with client needs and architectural
-                requirements
-              </li>
-              <li>Adherence to the organizational guidelines and processes</li>
-            </ul>
+            <b>
+              <u>skills and Qualification:</u>
+            </b>
+          </p>
+          <p>{jobs.skills}</p>
+        </div>
+        <div>
+          <p>
+            <b>Role</b>: {jobs.role}
+          </p>
+          <p>
+            <b>Industry type</b>: {jobs.industry}
+          </p>
+          <p>
+            <b>employment type</b>: {jobs.emptype}
+          </p>
+          <p>
+            <b>knowledge Required</b>: {jobs.keyword}
           </p>
         </div>
         <div>
           <p>
             <b>
-              <u>Requirements:</u>
+              <u>Job Description</u>
             </b>
           </p>
-          <p>
-            <b>Overall Experience-</b>
-          </p>
-          <p>3 to 9 years</p>
-          <p>
-            <b>Mandatory Experience-</b>
-          </p>
-          <p>One year relevant Experience in UI tools.</p>
-          <p>Good knowledge in html, css, JavaScript and React Js</p>
         </div>
         <div>
-          <p>Role: Software Developer</p>
-          <p>Industry Type: IT-Software, Software Services</p>
-          <p>
-            Functional Area: IT Software- Application Programming, Maintenance
-          </p>
-          <p>Employment Type: Full Time, Permanent</p>
-          <p>Role Category: Programming & Design</p>
+          <p>{jobs.jobdesc}</p>
         </div>
         <div>
-          <p>
-            <b>Education</b>
-          </p>
+          <button className="btn" onClick={handleApply}>Apply for job</button>
         </div>
-        <div>
-          <p>UG: Any Graduate in Any Specialization, Graduation Not Required</p>
-          <p>
-            PG: Any Postgraduate in Any Specialization, Post Graduation Not
-            Required
-          </p>
-          <p>Doctorate: Any Doctorate in Any Specialization</p>
-        </div>
+        {
+apply ? (
+<div class="alert alert-success" role="alert">
+              Thank you for Applying !!
+            </div>
+):(
+<></>
+)
+        }
       </div>
-      ;
     </>
   );
 };

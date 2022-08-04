@@ -14,6 +14,7 @@ const Employment = () => {
     monthExp2: "",
   };
   const id = useParams().id;
+  const [val, setVal] = useState(false);
   console.log(id)
   const [formValues, setFormValues] = useState(initialValues);
   const handleChange = (e) => {
@@ -45,7 +46,7 @@ const Employment = () => {
   }
   const HandleSubmit = (e) => {
     e.preventDefault();
-    handlePost().then(console.log("done"))
+    handlePost().then(setVal(true))
     
   }
   return (
@@ -161,6 +162,15 @@ const Employment = () => {
           <button type="submit" className="btn" style={{ margin: "10px" }}>
             Submit
           </button>
+          {val ? (
+            <div class="alert alert-success" role="alert">
+              Thank you for submission!
+            </div>
+          ) : (
+            <div class="alert alert-danger" role="alert">
+              fill out the form!
+            </div>
+          )}
         </form>
       </div>
     </>

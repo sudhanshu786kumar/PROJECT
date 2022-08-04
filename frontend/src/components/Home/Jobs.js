@@ -6,34 +6,47 @@ import "./home.css";
 import { useEffect, useState } from "react";
 
 const Jobs = () => {
+ 
   const fetchHandler = async () => {
     return await axios
       .get("http://localhost:5000/admin/data")
       .then((res) => res.data);
   };
-  const [jobs, newval] = useState();
+
+  const [jobs, newval] = useState([]);
+
+  let [filterdata, setfilterdata] = useState();
 
   useEffect(() => {
-    fetchHandler().then((data) => newval(data));
-  }, []);
+    fetchHandler()
+    .then((data) => newval(data))
+  
 
-  console.log(jobs);
-  let location="Pune"
+  
+  },
+
+  []);
+let loc="Noida"
+const rdata=()=>{
+console.log(jobs[0],"hu")
+}
+rdata()
+console.log(filterdata)
+
   return (
     <div>
       <Search />
       <h1>JOBS</h1>
       <div id="jobcards">
         <ul className="jobs">
-          {jobs &&
-            jobs.map((jobe, i) => (
-              <li key={i}>
-                
-                
-                <Job Sook={jobe} />
+        {
+          jobs && jobs.map((jobe,i)=>(
 
-              </li>
-            ))}
+            <li key={i}>
+<Job Sook={jobe}/>
+            </li>
+          ))
+        }
         </ul>
       </div>
     </div>

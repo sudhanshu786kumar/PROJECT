@@ -59,11 +59,24 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then( window.location.r
                   JOBS
                 </Link>
               </li>
-              <li className="nav-item">
-                <a className="nav-link " aria-current="page" href="#">
-                  COMPANIES
-                </a>
-              </li>
+              {isLoggedIn && (
+                
+                <li className="nav-item">
+                  
+                  <Link
+                    className="nav-link "
+                    aria-current="page"
+                   to="/users"
+                  >
+                   USER
+             
+                     
+                  </Link>
+                  
+                  
+                </li>
+                
+              )}
             </ul>
           </div>
           <div
@@ -96,6 +109,7 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then( window.location.r
                       <img src="profile.jpg" className="icimg" />
                     </span>
                   </a>
+                  
                   
                 </li>
                 
