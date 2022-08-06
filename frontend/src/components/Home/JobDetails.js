@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
-import Footer from "./Footer";
+
 
 const JobDetails = () => {
   const id = useParams().id;
@@ -24,6 +24,7 @@ const JobDetails = () => {
   console.log(jobs.jobtitle);
   return (
     <>
+    
       <div className="jobdetail">
         <h3>{jobs.jobtitle}</h3>
         <div>
@@ -34,7 +35,7 @@ const JobDetails = () => {
           </ul>
         </div>
         <div>
-          <h2></h2>
+          
           <p>
             <strong>
               <u>Job Role:{jobs.role}</u>

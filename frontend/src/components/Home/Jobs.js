@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Job from "./Job";
-import Search from "./Search";
+
 import "./home.css";
 import { useEffect, useState } from "react";
 
@@ -19,34 +19,86 @@ const Jobs = () => {
 
   useEffect(() => {
     fetchHandler()
-    .then((data) => newval(data))
-  
+    .then((data)=>newval(data))
+ 
+    .catch(Error)
 
-  
+    
   },
+[]);
+useEffect(()=>{
+setfilterdata(jobs)
+},[jobs])
 
-  []);
-let loc="Noida"
-const rdata=()=>{
-console.log(jobs[0],"hu")
+
+const filterPune = (e) => {
+
+  let filtered = jobs.filter(v => v.loc === 'Pune')
+  setfilterdata(filtered)
+  
+ 
+
 }
-rdata()
-console.log(filterdata)
+const filterBang = () => {
+
+  let filtered = jobs.filter(v => v.loc === 'Banglore')
+
+  setfilterdata(filtered)
+
+}
+const filterHyder = () => {
+
+  let filtered = jobs.filter(v => v.loc === 'Hyderabad')
+
+  setfilterdata(filtered)
+
+}
+const filterCoimb = () => {
+
+  let filtered = jobs.filter(v => v.loc === 'Coimbatore')
+
+  setfilterdata(filtered)
+
+}
+const filterGurugram = () => {
+
+  let filtered = jobs.filter(v => v.loc === 'Gurugram')
+
+  setfilterdata(filtered)
+
+}
+
+
+
 
   return (
     <div>
-      <Search />
+      <div>
+        <option>
+        <optio type='radio'  onClick={()=>filterPune()}/>Pune
+     <select type='radio' onClick={()=>filterBang()}/>Banglore
+     <select type='radio' onClick={()=>filterHyder()}/>Hyderabad
+     <select type='radio' onClick={()=>filterCoimb()}/>Coimbatore
+     <select type='radio' onClick={()=>filterGurugram()}/>Gurugram</option> </div>
+    
+ 
+     {/* <select type='radio' onClick={()=>filterBanglore()}/>
+     <select type='radio' onClick={()=>filterFantacy()}/>
+     <select type='radio' onClick={()=>filterFantacy()}/>
+     <select type='radio' onClick={()=>filterFantacy()}/>
+     <select type='radio' onClick={()=>filterFantacy()}/>
+     <select type='radio' onClick={()=>filterFantacy()}/> */}
       <h1>JOBS</h1>
+      
       <div id="jobcards">
         <ul className="jobs">
         {
-          jobs && jobs.map((jobe,i)=>(
+        filterdata &&
+          filterdata.map((obj, index) =>
+          <li key={index}>
+           <Job Sook={obj}/>
 
-            <li key={i}>
-<Job Sook={jobe}/>
-            </li>
-          ))
-        }
+          </li>) }
         </ul>
       </div>
     </div>

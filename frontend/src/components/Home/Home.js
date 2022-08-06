@@ -24,7 +24,7 @@ const Home = () => {
 
     console.log(login);
   };
-
+const[ide,setIde]=useState();
   const sendRequest = async () => {
     const res = await axios
       .post("http://localhost:5000/user/signin", {
@@ -34,16 +34,21 @@ const Home = () => {
       .catch((err) => console.log(err));
 
     const data = res.data;
+    setIde(res)
     return data;
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     sendRequest()
+   
       .then(() => dispatch(authActions.login()))
-      .then(() => history("/users"));
-  };
+      
+      .then(() => history("/users"))
+      
+  };console.log(ide,"hola")
   return (
     <>
       {/* home body */}

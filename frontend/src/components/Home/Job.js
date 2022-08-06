@@ -1,28 +1,18 @@
 import React from "react";
-
-import { Link, useNavigate } from "react-router-dom";
-
 const Job = (props) => {
   const {
     _id,
-    jobid,
     jobtitle,
-    date,
-    role,
-    resp,
     compname,
     exp,
     salary,
     loc,
-    skills,
     deg,
-    compinfo,
-    emptype,
-    industry,
     keyword,
-    jobdesc,
+ 
   } = props.Sook;
-  console.log(props.Sook)
+  console.log(props.Sook.loc)
+  
   return (
     <div>
       <div class="card" id="jobcard" style={{ width: "18rem" }}>
