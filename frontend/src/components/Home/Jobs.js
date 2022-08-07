@@ -16,6 +16,7 @@ const Jobs = () => {
   const [jobs, newval] = useState([]);
 
   let [filterdata, setfilterdata] = useState();
+ 
 
   useEffect(() => {
     fetchHandler()
@@ -39,11 +40,12 @@ const filterPune = (e) => {
  
 
 }
-const filterBang = () => {
+const filterBanglore = () => {
 
   let filtered = jobs.filter(v => v.loc === 'Banglore')
 
   setfilterdata(filtered)
+ 
 
 }
 const filterHyder = () => {
@@ -67,27 +69,36 @@ const filterGurugram = () => {
   setfilterdata(filtered)
 
 }
+const filterNoida = () => {
 
+  let filtered = jobs.filter(v => v.loc === 'Noida')
+
+  setfilterdata(filtered)
+
+}
+const filterChennai = () => {
+
+  let filtered = jobs.filter(v => v.loc === 'Noida')
+
+  setfilterdata(filtered)
+
+}
 
 
 
   return (
     <div>
-      <div>
-        <option>
-        <optio type='radio'  onClick={()=>filterPune()}/>Pune
-     <select type='radio' onClick={()=>filterBang()}/>Banglore
-     <select type='radio' onClick={()=>filterHyder()}/>Hyderabad
-     <select type='radio' onClick={()=>filterCoimb()}/>Coimbatore
-     <select type='radio' onClick={()=>filterGurugram()}/>Gurugram</option> </div>
-    
- 
-     {/* <select type='radio' onClick={()=>filterBanglore()}/>
-     <select type='radio' onClick={()=>filterFantacy()}/>
-     <select type='radio' onClick={()=>filterFantacy()}/>
-     <select type='radio' onClick={()=>filterFantacy()}/>
-     <select type='radio' onClick={()=>filterFantacy()}/>
-     <select type='radio' onClick={()=>filterFantacy()}/> */}
+     
+ <div >
+  <h1   className="location">Choose based on Location</h1>
+      <input type='radio'  onClick={()=>filterBanglore()} />Banglore
+     <input type='radio' onClick={()=>filterPune()}/>Pune
+     <input type='radio' onClick={()=>filterHyder()}/>Hyderabad
+     <input type='radio' onClick={()=>filterCoimb()}/>Coimbatore
+     <input type='radio' onClick={()=>filterGurugram()}/>Gurugram
+     <input type='radio' onClick={()=>filterNoida()}/>Noida
+     <input type='radio' onClick={()=>filterChennai()}/>Chennai
+</div>
       <h1>JOBS</h1>
       
       <div id="jobcards">

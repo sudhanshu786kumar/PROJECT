@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css";
+import Footer from './Footer'
 
 import { useState } from "react";
 import axios from "axios";
@@ -296,31 +297,31 @@ const[ide,setIde]=useState();
         >
           <div className="carousel-inner">
             <div className="carousel-item active" id="imgBox">
-              <img src={"./images/tata.png"} alt="" />
-              <img src={"./images/yashTech.jpg"} alt="" />
-              <img src={"./images/SRM.jpg"} alt="" />
-              <img src={"./images/wipro.jpg"} alt="" />
-              <img src={"./images/quest.jpg"} alt="" />
-              <img src={"./images/asg.png"} alt="" />
-              <img src={"./images/harman.png"} alt="" />
+             <a href="/jobs"><img src={"./images/tata.png"} alt="" /></a> 
+             <a href="/jobs"><img src={"./images/yashTech.jpg"} alt="" /></a> 
+             <a href="/jobs"><img src={"./images/SRM.jpg"} alt="" /></a> 
+             <a href=""> <img src={"./images/wipro.jpg"} alt="" /></a>
+             <a href="/jobs"><img src={"./images/quest.jpg"} alt="" /></a> 
+             <a href="/jobs" ><img src={"./images/asg.png"} alt="" /></a>
+             <a href="/jobs" ><img src={"./images/harman.png"} alt="" /></a>
             </div>
             <div className="carousel-item" id="imgBox">
-              <img src={"./images/tata.png"} alt="" />
-              <img src={"./images/yashTech.jpg"} alt="" />
-              <img src={"./images/SRM.jpg"} alt="" />
-              <img src={"./images/wipro.jpg"} alt="" />
-              <img src={"./images/quest.jpg"} alt="" />
-              <img src={"./images/asg.png"} alt="" />
-              <img src={"./images/harman.png"} alt="" />
+             <a href="/jobs" ><img src={"./images/tata.png"} alt="" /></a>
+             <a href="/jobs" ><img src={"./images/yashTech.jpg"} alt="" /></a>
+             <a href="" ></a><img src={"./images/SRM.jpg"} alt="" />
+             <a href="" ></a><img src={"./images/wipro.jpg"} alt="" />
+             <a href="" ></a><img src={"./images/quest.jpg"} alt="" />
+             <a href="" ></a><img src={"./images/asg.png"} alt="" />
+             <a href="" ></a><img src={"./images/harman.png"} alt="" />
             </div>
             <div className="carousel-item" id="imgBox">
-              <img src={"./images/tata.png"} alt="" />
-              <img src={"./images/yashTech.jpg"} alt="" />
-              <img src={"./images/SRM.jpg"} alt="" />
-              <img src={"./images/wipro.jpg"} alt="" />
-              <img src={"./images/quest.jpg"} alt="" />
-              <img src={"./images/asg.png"} alt="" />
-              <img src={"./images/harman.png"} alt="" />
+             <a href="/jobs"><img src={"./images/tata.png"} alt="" /></a> 
+             <a href="" ></a><img src={"./images/yashTech.jpg"} alt="" />
+             <a href="/jobs" ></a><img src={"./images/SRM.jpg"} alt="" />
+             <a href="" ></a><img src={"./images/wipro.jpg"} alt="" />
+             <a href="" ><img src={"./images/quest.jpg"} alt="" /></a>
+             <a href="" ><img src={"./images/asg.png"} alt="" /></a>
+             <a href="" ><img src={"./images/harman.png"} alt="" /></a>
             </div>
           </div>
           <button
@@ -423,6 +424,7 @@ const[ide,setIde]=useState();
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };

@@ -59,6 +59,11 @@ then(()=>dispatch(authActions.logout())).then(hist('/')).then( window.location.r
                   JOBS
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link " aria-current="page" to="/admin">
+                  ADMIN
+                </Link>
+              </li>
               {isLoggedIn && (
                 
                 <li className="nav-item">
