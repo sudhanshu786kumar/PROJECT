@@ -78,7 +78,7 @@ const filterNoida = () => {
 }
 const filterChennai = () => {
 
-  let filtered = jobs.filter(v => v.loc === 'Noida')
+  let filtered = jobs.filter(v => v.loc === 'Chennai')
 
   setfilterdata(filtered)
 
