@@ -113,6 +113,8 @@ const filterChennai = () => {
       <input type="radio" onClick={()=>filterChennai()} id="chennai" name="fav_language" value="HTML"/>
       <label for="chennai">Chennai</label>
 </div>
+    <br/>
+        <a href="/jobs"><button type="button" class=" btn-primary">Reset</button></a>
       <h1>JOBS</h1>
       
       <div id="jobcards">
