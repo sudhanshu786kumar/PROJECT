@@ -20,7 +20,10 @@ const JobDetails = () => {
   useEffect(() => {
     fetchHandler().then((d) => newval(d));
   }, [id]);
-
+  const deletePost=async()=>{
+    return await axios
+           .delete(`http://localhost:5000/admin/${id}`)
+           .then((res)=>res.data)}
   console.log(jobs.jobtitle);
   return (
     <>
@@ -96,6 +99,9 @@ const JobDetails = () => {
         </div>
         <div>
           <button className="btn" onClick={handleApply}>Apply for job</button>
+        </div>
+        <div>
+          <button className="btn btn-danger" onClick={deletePost}>Remove</button>
         </div>
         {
 apply ? (

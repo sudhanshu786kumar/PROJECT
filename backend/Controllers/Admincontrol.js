@@ -95,8 +95,24 @@ const formData = async (req, res) => {
   }
   return res.status(201).json(data);
 };
+const dataDelete=async(req,res)=>{
+  const id = req.params.id;
+  let data;
+  try{
+      data=await formdata.findByIdAndRemove(id)
+  }
+  catch(err){
+console.log(err)
+  }
+  if(!data){
+      res.status(400).json({
+          msg:"Not Deleted !!"
+      })
+  }return res.status(200).json({data})
 
+}
 exports.postData = postData;
 exports.logData = logData;
 exports.formData = formData;
 exports.getData = getData;
+exports.dataDelete=dataDelete;

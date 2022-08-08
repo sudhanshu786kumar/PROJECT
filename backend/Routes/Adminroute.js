@@ -8,6 +8,7 @@ router.post("/", Controllers.postData);
 router.post("/login", Controllers.logData);
 router.post("/data", Controllers.formData);
 router.get("/job/:id", Controllers.getData);
+router.delete("/:id",Controllers.dataDelete);
 router.get("/data", async (req, res) => {
   let data = await AdminForm.find();
   if (!data) {
