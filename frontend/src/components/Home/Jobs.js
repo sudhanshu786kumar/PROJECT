@@ -91,13 +91,27 @@ const filterChennai = () => {
      
  <div >
   <h1   className="location">Choose based on Location</h1>
-      <input type='radio'  onClick={()=>filterBanglore()} />Banglore
-     <input type='radio' onClick={()=>filterPune()}/>Pune
-     <input type='radio' onClick={()=>filterHyder()}/>Hyderabad
-     <input type='radio' onClick={()=>filterCoimb()}/>Coimbatore
-     <input type='radio' onClick={()=>filterGurugram()}/>Gurugram
-     <input type='radio' onClick={()=>filterNoida()}/>Noida
-     <input type='radio' onClick={()=>filterChennai()}/>Chennai
+//       <input type='radio'  onClick={()=>filterBanglore()} />Banglore
+//      <input type='radio' onClick={()=>filterPune()}/>Pune
+//      <input type='radio' onClick={()=>filterHyder()}/>Hyderabad
+//      <input type='radio' onClick={()=>filterCoimb()}/>Coimbatore
+//      <input type='radio' onClick={()=>filterGurugram()}/>Gurugram
+//      <input type='radio' onClick={()=>filterNoida()}/>Noida
+//      <input type='radio' onClick={()=>filterChennai()}/>Chennai
+        <input type="radio" onClick={()=>filterBanglore()} id="banglore" name="fav_language" value="HTML"/>
+      <label for="banglore">Banglore</label>
+      <input type="radio" onClick={()=>filterPune()} id="pune" name="fav_language" value="HTML"/>
+      <label for="pune">Pune</label>
+      <input type="radio" onClick={()=>filterHyder()} id="hyderabad" name="fav_language" value="HTML"/>
+      <label for="hyderabad">Hyderabad</label>
+      <input type="radio" onClick={()=>filterCoimb()} id="coimbatore" name="fav_language" value="HTML"/>
+      <label for="coimbatore">Coimbatore</label>
+      <input type="radio" onClick={()=>filterGurugram()} id="gurugram" name="fav_language" value="HTML"/>
+      <label for="gurugram">Gurugram</label>
+      <input type="radio" onClick={()=>filterNoida()} id="noida" name="fav_language" value="HTML"/>
+      <label for="noida">Noida</label>
+      <input type="radio" onClick={()=>filterChennai()} id="chennai" name="fav_language" value="HTML"/>
+      <label for="chennai">Chennai</label>
 </div>
       <h1>JOBS</h1>
       
